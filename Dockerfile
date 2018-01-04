@@ -10,4 +10,4 @@ RUN apt-get install -y git build-essential curl wget libpcap-dev clang wget
 RUN wget -q https://github.com/robertdavidgraham/masscan/archive/1.0.3.tar.gz -O /masscan-1.0.3.tar.gz
 RUN tar xf /masscan-1.0.3.tar.gz -C /opt/ && ln -s /opt/masscan-1.0.3 /opt/masscan && cd /opt/masscan && make -j && cp /opt/masscan/bin/masscan /usr/local/bin
 WORKDIR /opt/masscan
-CMD ["/usr/local/bin/masscan"]
+ENTRYPOINT ["/usr/local/bin/masscan"]
